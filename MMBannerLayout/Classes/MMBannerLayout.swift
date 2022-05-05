@@ -46,16 +46,16 @@ public class MMBannerLayout: UICollectionViewLayout {
         }
     }
     public var itemSpace:CGFloat = 0.0
-//    public var angle: CGFloat = 0.0 {
-//        didSet {
-//            self.invalidateLayout()
-//            if let attr = self.findCenterAttribute()  {
-//                let centerX = self.collectionView!.contentOffset.x + (self.collectionView!.frame.width/2)
-//                self._currentIdx = attributeList.firstIndex(of: attr)!
-//                self.collectionView!.contentOffset = CGPoint.init(x: self.collectionView!.contentOffset.x + attr.realFrame.midX - centerX, y: 0)
-//            }
-//        }
-//    }
+    public var angle: CGFloat = 0.0 {
+        didSet {
+            self.invalidateLayout()
+            if let attr = self.findCenterAttribute()  {
+                let centerX = self.collectionView!.contentOffset.x + (self.collectionView!.frame.width/2)
+                self._currentIdx = attributeList.firstIndex(of: attr)!
+                self.collectionView!.contentOffset = CGPoint.init(x: self.collectionView!.contentOffset.x + attr.realFrame.midX - centerX, y: 0)
+            }
+        }
+    }
 //    public var minimuAlpha: CGFloat = 1.0 {
 //        didSet {
 //            self.invalidateLayout()
@@ -64,21 +64,21 @@ public class MMBannerLayout: UICollectionViewLayout {
     
     private var twoDistance: CGFloat {
         get {
-//            return itemSize.width/2+angleItemWidth/2+itemSpace
-            return itemSize.width/2+itemSpace
+            return itemSize.width/2+angleItemWidth/2+itemSpace
+//            return itemSize.width/2+itemSpace
         }
     }
     
-//    private var radius: CGFloat{
-//        get {
-//            return angle*CGFloat.pi/180
-//        }
-//    }
-//    private var angleItemWidth: CGFloat {
-//        get {
-//            return itemSize.width*cos(radius)
-//        }
-//    }
+    private var radius: CGFloat{
+        get {
+            return angle*CGFloat.pi/180
+        }
+    }
+    private var angleItemWidth: CGFloat {
+        get {
+            return itemSize.width*cos(radius)
+        }
+    }
     
     private var _itemSize:CGSize?
     public var itemSize: CGSize{
@@ -257,7 +257,7 @@ public class MMBannerLayout: UICollectionViewLayout {
         self.focusIndexPath = attributeList[safe:_currentIdx]?.indexPath
 //        let centerLoc = setIdx.firstIndex(of: _currentIdx) ?? 0
 //        var transform = CATransform3DIdentity
-
+//
 //        transform.m34  = -1 / 700
 //        setIdx.enumerated().forEach {
 //            switch $0.offset {
@@ -265,20 +265,20 @@ public class MMBannerLayout: UICollectionViewLayout {
 //
 //                if centerX < midX {
 //                    attributeList[$0.element].transform3D = CATransform3DRotate(transform, radius*(1-percent), 0, 1, 0)
-//                    attributeList[$0.element].alpha = minimuAlpha + (1-minimuAlpha)*percent
+////                    attributeList[$0.element].alpha = minimuAlpha + (1-minimuAlpha)*percent
 //
 //                } else {
 //                    attributeList[$0.element].transform3D = CATransform3DRotate(transform, radius, 0, 1, 0)
-//                    attributeList[$0.element].alpha = minimuAlpha
+////                    attributeList[$0.element].alpha = minimuAlpha
 //                }
 //
 //            case centerLoc+1:
 //
 //                if centerX > midX {
-//                    attributeList[$0.element].alpha = minimuAlpha + (1-minimuAlpha)*percent
+////                    attributeList[$0.element].alpha = minimuAlpha + (1-minimuAlpha)*percent
 //                    attributeList[$0.element].transform3D = CATransform3DRotate(transform, -radius*(1-percent), 0, 1, 0)
 //                } else {
-//                    attributeList[$0.element].alpha = minimuAlpha
+////                    attributeList[$0.element].alpha = minimuAlpha
 //                    attributeList[$0.element].transform3D = CATransform3DRotate(transform, -radius, 0, 1, 0)
 //                }
 //            case centerLoc:
@@ -286,11 +286,11 @@ public class MMBannerLayout: UICollectionViewLayout {
 //                    attributeList[$0.element].alpha = 1.0
 //                    attributeList[$0.element].transform3D = CATransform3DIdentity
 //                } else if centerX > midX {
-//                    attributeList[$0.element].alpha = minimuAlpha + (1-minimuAlpha)*(1-percent)
+////                    attributeList[$0.element].alpha = minimuAlpha + (1-minimuAlpha)*(1-percent)
 //                    attributeList[$0.element].transform3D = CATransform3DRotate(transform, radius*(percent), 0, 1, 0)
 //
 //                } else {
-//                    attributeList[$0.element].alpha = minimuAlpha + (1-minimuAlpha)*(1-percent)
+////                    attributeList[$0.element].alpha = minimuAlpha + (1-minimuAlpha)*(1-percent)
 //                    attributeList[$0.element].transform3D = CATransform3DRotate(transform, -radius*(percent), 0, 1, 0)
 //                }
 //
