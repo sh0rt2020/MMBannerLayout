@@ -1,5 +1,5 @@
 PODS:
-  - MMBannerLayout (0.1.0)
+  - MMBannerLayout (5.0.8)
 
 DEPENDENCIES:
   - MMBannerLayout (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  MMBannerLayout: 1832bcf0364ce4d3bae59bdc4e9eb42c4c006355
+  MMBannerLayout: edc9bcf9826e066c482cb739d52d875eb406b199
 
 PODFILE CHECKSUM: 08b05e62912ff5837118e3635cf95060db91100a
 
-COCOAPODS: 1.2.1.rc.1
+COCOAPODS: 1.10.1

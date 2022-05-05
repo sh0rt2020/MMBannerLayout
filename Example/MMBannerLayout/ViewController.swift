@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         if let layout = collection.collectionViewLayout as? MMBannerLayout {
             layout.itemSpace = 10
             layout.itemSize = self.collection.frame.insetBy(dx: 100, dy: 40).size
-            layout.minimuAlpha = 0.4
+//            layout.minimuAlpha = 0.4
         }
     }
     
@@ -49,18 +49,18 @@ class ViewController: UIViewController {
     }
     
     @IBAction func autoPlayAction(sw: UISwitch) {
-        if sw.isOn {
-            (collection.collectionViewLayout as? MMBannerLayout)?.autoPlayStatus = .play(duration: 2.0)
-        } else {
-            (collection.collectionViewLayout as? MMBannerLayout)?.autoPlayStatus = .none
-        }
+//        if sw.isOn {
+//            (collection.collectionViewLayout as? MMBannerLayout)?.autoPlayStatus = .play(duration: 2.0)
+//        } else {
+//            (collection.collectionViewLayout as? MMBannerLayout)?.autoPlayStatus = .none
+//        }
     }
     
     @IBAction func angleAction(slider: UISlider) {
-        labAngle.text = "Angle: \(slider.value)"
-        infiniteSwitch.isOn = false
-        (collection.collectionViewLayout as? MMBannerLayout)?.setInfinite(isInfinite: false, completed: nil)
-        (collection.collectionViewLayout as? MMBannerLayout)?.angle = CGFloat(slider.value)
+//        labAngle.text = "Angle: \(slider.value)"
+//        infiniteSwitch.isOn = false
+//        (collection.collectionViewLayout as? MMBannerLayout)?.setInfinite(isInfinite: false, completed: nil)
+//        (collection.collectionViewLayout as? MMBannerLayout)?.angle = CGFloat(slider.value)
     }
 }
 
